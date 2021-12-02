@@ -1,6 +1,6 @@
-const employee ={
-    name: "Sam",
-    streetAddres: "11 Broadway"
+const employee = {
+    name: 'Sam',
+    streetAddress: '11 Broadway'
 }
 
 function updateEmployeeWithKeyAndValue(object, key, value) {
@@ -10,6 +10,11 @@ function updateEmployeeWithKeyAndValue(object, key, value) {
     return newEmployee;
 }
 
+function destructivelyUpdateEmployeeWithKeyAndValue(){
+    employee.streetAddress = '12 Broadway';
+    return employee;
+}
+
 function beforeEach(){
     delete employee.streetAddress;
     delete employee.name;
@@ -17,19 +22,13 @@ function beforeEach(){
     employee.streetAddress= '11 Broadway';
 }
 
-
-function destructivelyUpdateEmployeeWithKeyAndValue (object, key, value){
-    employee.streetAddress = '12 Broadway';
-    return employee;
-}
-
-function deleteFromEmployeeByKey(object, key){
-    const newEmployee ={...employee};
+function deleteFromEmployeeByKey(){
+    const newEmployee = {...employee};
     delete newEmployee.name;
     return newEmployee;
 }
 
-function destructivelyDeleteFromEmployeeByKey(object, key){
+function destructivelyDeleteFromEmployeeByKey(){
     delete employee.name;
     return employee;
 }
